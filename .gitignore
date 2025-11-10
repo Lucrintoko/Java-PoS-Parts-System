@@ -1,0 +1,23 @@
+
+# Compiled Class Files
+*.class 
+*.jar
+*.zip
+*.tar
+*.gz
+*.rar
+*.war
+*.ear
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JVM Files
+*.log
+*.hprof
+hs_err_pid*
+
+# Build Specific 
+/target/
+/build/
