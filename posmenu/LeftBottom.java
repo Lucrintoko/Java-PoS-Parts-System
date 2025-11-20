@@ -12,4 +12,6 @@ public class LeftBottom
                 namePanel = new JLabel();
                 userImage = new JLabel();
             }
+
+        //Kupal is bars, marius, nash
     }
