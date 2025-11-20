@@ -9,7 +9,6 @@ public class LeftBottom
         //Constructor Utilized on how LeftBottom part of POS System Looks
         public LeftBottom ()
             {
-                namePanel = new JLabel();
-                userImage = new JLabel();
+                
             }
     }
