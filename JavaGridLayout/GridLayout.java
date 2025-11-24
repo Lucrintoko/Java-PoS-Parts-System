@@ -20,9 +20,9 @@ public class GridLayout {
         JButton button6 = createButton("Crucial", "crucial.png");
         JButton button7 = createButton("Sandisk", "sandiskk.png");
         JButton button8 = createButton("G.Skill", "G.Skill.png");
-        JButton button9 = createButton("ROG", "rog.png");
+        JButton button9 = createButton("ROG", "rom.png");
 
-        button1.setBackground(Color.BLUE);
+        button1.setBackground(new Color(0, 113, 197));
         button1.setForeground(Color.WHITE);
 
         button2.setBackground(Color.RED);
@@ -34,7 +34,7 @@ public class GridLayout {
         button4.setBackground(Color.GREEN);
         button4.setForeground(Color.BLACK);
 
-        button5.setBackground(Color.BLUE);
+        button5.setBackground(new Color(20,40, 160));
         button5.setForeground(Color.WHITE);
 
         button6.setBackground(new Color(128, 0, 128));
