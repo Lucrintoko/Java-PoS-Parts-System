@@ -1,10 +1,10 @@
 package parts;
 
-public class HDD extends Product
+public class SSD extends Product
     {
         private String author;
 
-        public HDD(String partName, double price, int amount, String author)
+        public SSD(String partName, double price, int amount, String author)
             {
                 super(partName, price, amount);
                 this.author = author;
