@@ -1,0 +1,67 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class RAMGrid {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Grid Layout");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 600);
+        frame.setResizable(false);
+
+        JPanel panel = new JPanel(new java.awt.GridLayout(3, 3, 10, 10));
+        panel.setBackground(Color.BLACK);
+
+        JButton button1 = createButton("G.Skill Trident Z5 Neo RGB DDR5-6000 (4 x 64GB, 171956.95, 4, G.Skill");
+        JButton button2 = createButton("Corsair Vengeance DDR5-5200 (2 x 32GB), 56521.91, 6, Corsair");
+        JButton button3 = createButton("TeamGroup T-Force Xtreem DDR4-3600 (2 x 8GB), 8631.47, 5, TeamGroup");
+        JButton button4 = createButton("Patriot Viper Venom DDR5-6400 (2 x 24GB), 19396.15, 7, Patriot Memory");
+        JButton button5 = createButton("Corsair Vengeance RGB Pro DDR4-32000 (2 x 16GB), 13831.99, 9, Corsair");
+        JButton button6 = createButton("Team XTREEM ARGB DDR5-8200 (2 x 24GB), 37393.43, 10, TeamGroup");
+
+          
+        button1.setBackground(Color.GRAY);
+        button1.setForeground(Color.WHITE);
+
+        button2.setBackground(Color.GRAY);
+        button2.setForeground(Color.WHITE);
+
+        button3.setBackground(Color.GRAY);
+        button3.setForeground(Color.BLACK);
+
+        button4.setBackground(Color.GRAY);
+        button4.setForeground(Color.BLACK);
+
+        button5.setBackground(Color.GRAY);
+        button5.setForeground(Color.WHITE);
+
+        button6.setBackground(Color.GRAY);
+        button6.setForeground(Color.WHITE);
+
+      
+        panel.add(button1);
+        panel.add(button2);
+        panel.add(button3);
+        panel.add(button4);
+        panel.add(button5);
+        panel.add(button6);
+
+        panel.add(new JLabel());
+        panel.add(new JLabel());
+        panel.add(new JLabel());
+
+        frame.add(panel);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+    private static JButton createButton(String name) {
+        JButton button = new JButton(name);
+        button.setToolTipText(name);
+        button.setPreferredSize(new Dimension(150, 150));
+        button.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        button.setBackground(Color.GRAY);
+        button.setForeground(Color.WHITE);
+        return button;
+    }
+}
+
