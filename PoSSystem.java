@@ -1,60 +1,73 @@
+import MenuModules.ButtonGridPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.*;
-import java.awt.*;
 
-public class PoSSystem {
-    JFrame frame;
-    JPanel mainPanel, leftPanel, middlePanel, rightPanel;
-    JPanel leftTopPanel, leftBottomPanel;
-    JPanel middleTopPanel, middleBottomPanel;
-    JPanel rightTopPanel, rightBottomPanel;
+public class PoSSystem extends JFrame
+    {
+        JPanel mainPanel,
+               leftPanel, leftTopPanel, leftBottomPanel,
+               middlePanel, middleTopPanel, middleBottomPanel,
+               rightPanel, rightTopPanel, rightBottomPanel;
 
-    public PoSSystem() {
-        // Initialize frame
-        frame = new JFrame("NameNatin - PoS System");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 800);
-        frame.setLayout(new BorderLayout());
+        public PoSSystem()
+            {
+                //Basic JFrame Properties
+                this.setSize(1200, 800);
+                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                this.setLayout(new BorderLayout());
 
-        // Main panel with GridLayout for three columns
-        mainPanel = new JPanel(new GridLayout(1, 3));
-        frame.add(mainPanel, BorderLayout.CENTER);
+                mainPanel = new JPanel(new BorderLayout());
 
-        // Left Panel
-        leftPanel = new JPanel(new BorderLayout());
-        leftTopPanel = new JPanel();
-        leftBottomPanel = new JPanel();
-        leftTopPanel.setBackground(Color.LIGHT_GRAY);
-        leftBottomPanel.setBackground(Color.WHITE);
-        leftPanel.add(leftTopPanel, BorderLayout.NORTH);
-        leftPanel.add(leftBottomPanel, BorderLayout.CENTER);
+                //----------------Left Panel----------------
+                //Left Panel Configurations
+                leftPanel = new JPanel();
+                leftPanel.setBackground(Color.BLACK);
+                leftPanel.setPreferredSize(new Dimension(280, 0));
 
-        // Middle Panel
-        middlePanel = new JPanel(new BorderLayout());
-        middleTopPanel = new JPanel();
-        middleBottomPanel = new JPanel();
-        middleTopPanel.setBackground(Color.LIGHT_GRAY);
-        middleBottomPanel.setBackground(Color.WHITE);
-        middlePanel.add(middleTopPanel, BorderLayout.NORTH);
-        middlePanel.add(middleBottomPanel, BorderLayout.CENTER);
+                //----------------Middle Panel----------------
+                //Middle Panel Configurations
+                middlePanel = new JPanel(new BorderLayout());
+                middlePanel.setBackground(Color.BLACK);
 
-        // Right Panel
-        rightPanel = new JPanel(new BorderLayout());
-        rightTopPanel = new JPanel();
-        rightBottomPanel = new JPanel();
-        rightTopPanel.setBackground(Color.LIGHT_GRAY);
-        rightBottomPanel.setBackground(Color.WHITE);
-        rightPanel.add(rightTopPanel, BorderLayout.NORTH);
-        rightPanel.add(rightBottomPanel, BorderLayout.CENTER);
+                //Insantiating Top and Bottom side
+                middleTopPanel = new JPanel(new BorderLayout());
+                middleBottomPanel = new JPanel(new BorderLayout());
 
-        // Add all three panels to mainPanel
-        mainPanel.add(leftPanel);
-        mainPanel.add(middlePanel);
-        mainPanel.add(rightPanel);
+                //Insantiating ButtonGridPanel for all Company Buttons
+                ButtonGridPanel buttonGridPanel = new ButtonGridPanel();
+                middleTopPanel.add(buttonGridPanel, BorderLayout.CENTER);
+                
+                //----------------Split Pane for Bottom and Top Panel----------------
+                JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, middleTopPanel, middleBottomPanel);
 
-        // Finalize frame
-        frame.setVisible(true);
-    }
+                //Split Pane Configurations
+                splitPane.setDividerLocation(400);
+                splitPane.setResizeWeight(0.7);
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new PoSSystem());
+                middlePanel.add(splitPane, BorderLayout.CENTER);
+
+                //----------------Right Panel----------------
+                //Right Panel Configurations
+                rightPanel = new JPanel();
+                rightPanel.setBackground(Color.BLACK);
+                rightPanel.setPreferredSize(new Dimension(300, 0));
+                
+                //Merging all Panels for Main Panel
+                mainPanel.add(leftPanel, BorderLayout.WEST);                
+                mainPanel.add(middlePanel, BorderLayout.CENTER);
+                mainPanel.add(rightPanel, BorderLayout.EAST);                
+
+                //Adding Main Panel to the JFrame
+                this.add(mainPanel, BorderLayout.CENTER);
+
+                //Make Frame Visible
+                this.setVisible(true);
+            }
+
+        public static void main (String[] args)
+            {
+                SwingUtilities.invokeLater(() -> new PoSSystem());
+            }
     }
