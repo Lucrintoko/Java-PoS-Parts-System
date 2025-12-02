@@ -1,70 +1,45 @@
 package menumodules;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import javax.swing.*;
+import menumodules.*;
+import menumodules.leftpanel.LeftPanel;
+import menumodules.middlepanel.MiddlePanel;
+import menumodules.rightpanel.RightPanel;
 
 public class MainMenu extends JFrame
     {
-        JPanel mainPanel,
-               leftPanel, leftTopPanel, leftBottomPanel,
-               middlePanel, middleTopPanel, middleBottomPanel,
-               rightPanel, rightTopPanel, rightBottomPanel;
+        JPanel mainPanel;
+        LeftPanel leftPanel;
+        MiddlePanel middlePanel;
+        RightPanel rightPanel;
 
         public MainMenu()
             {
                 //Basic JFrame Properties
                 this.setSize(1200, 800);
+                //Center the window
+                this.setLocationRelativeTo(null);
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 this.setLayout(new BorderLayout());
 
+                //To add all of the panels
                 mainPanel = new JPanel(new BorderLayout());
 
                 //----------------Left Panel----------------
-                //Left Panel Configurations
-                leftPanel = new JPanel();
-                leftPanel.setBackground(Color.BLACK);
-                leftPanel.setPreferredSize(new Dimension(280, 0));
+                leftPanel = new LeftPanel();
 
                 //----------------Middle Panel----------------
                 //Middle Panel Configurations
-                middlePanel = new JPanel(new BorderLayout());
-                middlePanel.setBackground(Color.BLACK);
-
-                //Insantiating Top and Bottom side
-                middleTopPanel = new JPanel(new BorderLayout());
-                middleBottomPanel = new JPanel(new BorderLayout());
-
-                //To make it uniform with Button Grid Panel above it
-                middleBottomPanel.setBackground(Color.BLACK);
-
-                //Insantiating ButtonGridPanel for all Company Buttons
-                ButtonGridPanel buttonGridPanel = new ButtonGridPanel();
-                middleTopPanel.add(buttonGridPanel, BorderLayout.CENTER);
-                
-                //----------------Split Pane for Bottom and Top Panel----------------
-                JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, middleTopPanel, middleBottomPanel);
-
-                //Split Pane Configurations
-                splitPane.setDividerLocation(400);
-                splitPane.setResizeWeight(0.7);
-                //Disable user ability to resize the split pane
-                splitPane.setEnabled(false);
-                splitPane.setDividerSize(2); // Set the divider to be 2 pixels thin
-                splitPane.setBackground(Color.WHITE); // Attempt to make the divider white
-
-                middlePanel.add(splitPane, BorderLayout.CENTER);
+                middlePanel = new MiddlePanel();
 
                 //----------------Right Panel----------------
-                //Right Panel Configurations
-                rightPanel = new JPanel();
-                rightPanel.setBackground(Color.BLACK);
-                rightPanel.setPreferredSize(new Dimension(300, 0));
-                
+                rightPanel = new RightPanel();
+
                 //Merging all Panels for Main Panel
-                mainPanel.add(leftPanel, BorderLayout.WEST);                
+                mainPanel.add(leftPanel, BorderLayout.WEST);
                 mainPanel.add(middlePanel, BorderLayout.CENTER);
-                mainPanel.add(rightPanel, BorderLayout.EAST);                
+                mainPanel.add(rightPanel, BorderLayout.EAST);
 
                 //Adding Main Panel to the JFrame
                 this.add(mainPanel, BorderLayout.CENTER);
