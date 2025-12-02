@@ -1,4 +1,4 @@
-package menumodules;
+package menumodules.middlepanel.subpanels;
 import java.awt.*;
 import javax.swing.*;
 
