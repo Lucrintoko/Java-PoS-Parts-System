@@ -1,17 +1,18 @@
+package 
 import MenuModules.ButtonGridPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.*;
 
-public class PoSSystem extends JFrame
+public class MainMenu extends JFrame
     {
         JPanel mainPanel,
                leftPanel, leftTopPanel, leftBottomPanel,
                middlePanel, middleTopPanel, middleBottomPanel,
                rightPanel, rightTopPanel, rightBottomPanel;
 
-        public PoSSystem()
+        public MainMenu()
             {
                 //Basic JFrame Properties
                 this.setSize(1200, 800);
@@ -68,6 +69,6 @@ public class PoSSystem extends JFrame
 
         public static void main (String[] args)
             {
-                SwingUtilities.invokeLater(() -> new PoSSystem());
+                SwingUtilities.invokeLater(() -> new MainMenu());
             }
     }
