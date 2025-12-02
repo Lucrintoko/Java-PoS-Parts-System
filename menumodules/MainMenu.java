@@ -1,5 +1,4 @@
 package menumodules;
-import menumodules.ButtonGridPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -36,6 +35,9 @@ public class MainMenu extends JFrame
                 middleTopPanel = new JPanel(new BorderLayout());
                 middleBottomPanel = new JPanel(new BorderLayout());
 
+                //To make it uniform with Button Grid Panel above it
+                middleBottomPanel.setBackground(Color.BLACK);
+
                 //Insantiating ButtonGridPanel for all Company Buttons
                 ButtonGridPanel buttonGridPanel = new ButtonGridPanel();
                 middleTopPanel.add(buttonGridPanel, BorderLayout.CENTER);
@@ -46,6 +48,10 @@ public class MainMenu extends JFrame
                 //Split Pane Configurations
                 splitPane.setDividerLocation(400);
                 splitPane.setResizeWeight(0.7);
+                //Disable user ability to resize the split pane
+                splitPane.setEnabled(false);
+                splitPane.setDividerSize(2); // Set the divider to be 2 pixels thin
+                splitPane.setBackground(Color.WHITE); // Attempt to make the divider white
 
                 middlePanel.add(splitPane, BorderLayout.CENTER);
 
@@ -65,10 +71,5 @@ public class MainMenu extends JFrame
 
                 //Make Frame Visible
                 this.setVisible(true);
-            }
-
-        public static void main (String[] args)
-            {
-                SwingUtilities.invokeLater(() -> new MainMenu());
             }
     }
