@@ -1,6 +1,8 @@
+package menumodules;
+
 import java.util.ArrayList;
 import java.util.List;
-import parts.*;
+import menumodules.parts.*;
 
 public class ProductStorage 
 {

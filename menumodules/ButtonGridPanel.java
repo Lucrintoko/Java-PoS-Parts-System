@@ -1,4 +1,4 @@
-package MenuModules;
+package menumodules;
 import java.awt.*;
 import javax.swing.*;
 

@@ -1,5 +1,5 @@
-package 
-import MenuModules.ButtonGridPanel;
+package menumodules;
+import menumodules.ButtonGridPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

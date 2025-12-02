@@ -1,4 +1,4 @@
-package parts;
+package menumodules.parts;
 
 public class CPU extends Product
     {

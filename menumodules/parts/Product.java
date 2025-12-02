@@ -1,4 +1,4 @@
-package parts;
+package menumodules.parts;
 
 public abstract class Product
     {
