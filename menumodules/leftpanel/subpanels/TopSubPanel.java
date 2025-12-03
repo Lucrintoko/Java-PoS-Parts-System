@@ -220,4 +220,17 @@ public class TopSubPanel extends JPanel
                 gbc.fill = GridBagConstraints.BOTH; // Allow it to expand vertically
                 this.add(new JLabel(), gbc); // Add an empty label as a spacer
             }
+
+        //Method to update counters to accurately display what is and what's not available inside of the brand that's selected
+        public void updateCounts(String brand, ProductStorage storage) {
+            long cpuCount = storage.getCPUs().stream().filter(p -> p.getBrand().equalsIgnoreCase(brand)).count();
+            long gpuCount = storage.getGPUs().stream().filter(p -> p.getBrand().equalsIgnoreCase(brand)).count();
+            long ssdCount = storage.getSSDs().stream().filter(p -> p.getBrand().equalsIgnoreCase(brand)).count();
+            long ramCount = storage.getRAMs().stream().filter(p -> p.getBrand().equalsIgnoreCase(brand)).count();
+
+            remainingPartsLabel[0].setText("(" + cpuCount + ")");
+            remainingPartsLabel[1].setText("(" + gpuCount + ")");
+            remainingPartsLabel[2].setText("(" + ssdCount + ")");
+            remainingPartsLabel[3].setText("(" + ramCount + ")");
+        }
     }
