@@ -18,5 +18,6 @@ public abstract class Product
         public double getPrice (){return price;}
         public int getAmount (){return amount;}
 
+        public abstract String getBrand();
         public abstract void printInfo ();
     }
