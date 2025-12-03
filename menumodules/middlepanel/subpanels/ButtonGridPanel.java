@@ -1,22 +1,41 @@
 package menumodules.middlepanel.subpanels;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
+import menumodules.ProductStorage;
+import menumodules.leftpanel.subpanels.TopSubPanel;
 
-public class ButtonGridPanel extends JPanel 
+public class ButtonGridPanel extends JPanel implements ActionListener
     {
         //Declaring the Button 3x3 outside of Constructor for ease of tracking
         JPanel buttonGrid;
+        
+        //Declaring variable names for the connection
+        private TopSubPanel topSubPanel;
+        private BottomSubPanel bottomSubPanel;
+        private ProductStorage productStorage;
 
+        //Method to easily insantiate Panels and Storage for ease of access for Actionlistener
+        public void setDependencies(TopSubPanel top, BottomSubPanel bottom, ProductStorage storage) {
+            this.topSubPanel = top;
+            this.bottomSubPanel = bottom;
+            this.productStorage = storage;
+        }
+
+        //Creating an array of names for ease of insantiating
         String[] names = {
             "Intel", "AMD", "Corsair", "NVIDIA", "Samsung",
             "Crucial", "Sandisk", "G.Skill", "ROG"
         };
 
+        //Array of file names to be tuilized by the button creation
         String[] files = {
             "intel.png", "AMDD.png", "corsair.png", "nvidia.png", "samsungg.png",
             "crucial.png", "sandiskk.png", "G.Skill.png", "rog.png"
         };
 
+        //Insantiating a bgColors array for ease of use
         Color[] bgColors = {
             new Color(0, 113, 197), //Intel Blue
             Color.RED,                     //AMD 
@@ -29,6 +48,7 @@ public class ButtonGridPanel extends JPanel
             Color.BLACK                   //ROG
         };
 
+        //Insatiating to ensure text is readable by user
         Color[] fgColors = {
             Color.WHITE, //Intel Text
             Color.WHITE, //AMD Text
@@ -41,6 +61,7 @@ public class ButtonGridPanel extends JPanel
             {
                 //Setting the Layout Manager of this panel to BorderLayout for ease of formatting
                 this.setLayout(new BorderLayout());
+                this.setBackground(Color.BLACK);
 
                 //Insantiating the buttonGrid JPanel 
                 buttonGrid = new JPanel(new GridLayout(3, 3, 10, 10));
@@ -56,7 +77,7 @@ public class ButtonGridPanel extends JPanel
                 for (int i = 0; i < names.length; i++)
                     {
                         //Concatenating filePath string to instantly get each file path of image
-                        String filePath = "MenuModules/ButtonAssets/" + files[i];
+                        String filePath = "menumodules/buttonassets/" + files[i];
 
                         //Creation of Button 
                         buttons[i] = createButton(names[i], filePath);
@@ -64,6 +85,9 @@ public class ButtonGridPanel extends JPanel
                         //Setting individual Background and Foreground to each button
                         buttons[i].setBackground(bgColors[i]);
                         buttons[i].setForeground(fgColors[i]);
+                        
+                        //Adds an ActionListener to each button via this syntax due to implements ActionListener
+                        buttons[i].addActionListener(this);
 
                         //Adding to GridLayout of the panel
                         buttonGrid.add(buttons[i]);
@@ -73,7 +97,8 @@ public class ButtonGridPanel extends JPanel
                 this.add(buttonGrid, SwingConstants.CENTER);
             }
         
-        private static JButton createButton (String name, String imagePath)
+        //Method to create a button with rounded corners
+        private JButton createButton (String name, String imagePath)
             {
                 //Insantiating a Button
                 JButton button = new JButton()
@@ -152,4 +177,16 @@ public class ButtonGridPanel extends JPanel
 
                 return button;
             }
+        
+        //Action Listener Method
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (topSubPanel != null && bottomSubPanel != null && productStorage != null) {
+                String brand = e.getActionCommand();
+                //Method from Left Main Panel's Top Sub panel
+                topSubPanel.updateCounts(brand, productStorage);
+                //Method from Middle Main Panel's Bottom Sub Panel
+                bottomSubPanel.updateProducts(brand, productStorage);
+            }
+        }
     }
