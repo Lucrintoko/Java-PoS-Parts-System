@@ -11,6 +11,13 @@ public class ProductStorage
     private List<SSD> SSDs;
     private List<RAM> RAMs;
 
+    //Getters
+    public List<CPU> getCPUs() { return CPUs; }
+    public List<GPU> getGPUs() { return GPUs; }
+    public List<SSD> getSSDs() { return SSDs; }
+    public List<RAM> getRAMs() { return RAMs; }
+
+    //Creating the whole list
     public ProductStorage ()
         {
             CPUs = new ArrayList<>();
