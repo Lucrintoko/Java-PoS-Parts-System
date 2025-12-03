@@ -11,6 +11,9 @@ public class RAM extends Product
             }
 
         @Override
+        public String getBrand() { return author; }
+
+        @Override
         public void printInfo ()
             {
                 StringBuilder sb = new StringBuilder();
