@@ -2,7 +2,6 @@ package menumodules;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.*;
-import menumodules.*;
 import menumodules.leftpanel.LeftPanel;
 import menumodules.middlepanel.MiddlePanel;
 import menumodules.rightpanel.RightPanel;
@@ -22,6 +21,7 @@ public class MainMenu extends JFrame
                 this.setLocationRelativeTo(null);
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 this.setLayout(new BorderLayout());
+                this.setBackground(Color.BLACK);
 
                 //To add all of the panels
                 mainPanel = new JPanel(new BorderLayout());
