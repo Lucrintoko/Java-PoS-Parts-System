@@ -8,6 +8,7 @@ import menumodules.leftpanel.subpanels.*;
 
 public class LeftPanel extends JPanel
     {
+        private TopSubPanel topSubPanel;
 
         public LeftPanel ()
             {
@@ -18,7 +19,7 @@ public class LeftPanel extends JPanel
                 this.setPreferredSize(new Dimension(350, -1));
 
                 //Insantiating Sub Panels to be added to Main Left Panel
-                TopSubPanel topSubPanel = new TopSubPanel();
+                topSubPanel = new TopSubPanel();
                 BottomSubPanel bottomSubPanel = new BottomSubPanel();
 
                 //Creating Split Pane Divider 
@@ -33,4 +34,9 @@ public class LeftPanel extends JPanel
                 //Adding to the JPanel
                 this.add(splitPane, BorderLayout.CENTER);
             }
+        
+        //Method for setting dependency
+        public TopSubPanel getTopSubPanel() {
+            return topSubPanel;
+        }
     }

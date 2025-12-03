@@ -9,6 +9,8 @@ import menumodules.middlepanel.subpanels.*;
 
 public class MiddlePanel extends JPanel
     {
+        private ButtonGridPanel buttonGridPanel;
+        private BottomSubPanel bottomSubPanel;
 
         public MiddlePanel ()
             {
@@ -26,11 +28,11 @@ public class MiddlePanel extends JPanel
                 middleBottomPanel.setBackground(Color.BLACK);
 
                 //Insantiating ButtonGridPanel for all Company Buttons
-                ButtonGridPanel buttonGridPanel = new ButtonGridPanel();
+                buttonGridPanel = new ButtonGridPanel();
                 middleTopPanel.add(buttonGridPanel, BorderLayout.CENTER);
 
                 //Insantiating Bottom Sub Panel for List of Companies
-                BottomSubPanel bottomSubPanel = new BottomSubPanel();
+                bottomSubPanel = new BottomSubPanel();
                 middleBottomPanel.add(bottomSubPanel, BorderLayout.CENTER);
                 
                 //----------------Split Pane for Middle Bottom and Top Panel----------------
@@ -41,9 +43,17 @@ public class MiddlePanel extends JPanel
                 splitPane.setResizeWeight(0.7);
                 //Disable user ability to resize the split pane
                 splitPane.setEnabled(false);
-                splitPane.setDividerSize(2); // Set the divider to be 2 pixels thin
-                splitPane.setBackground(Color.WHITE); // Attempt to make the divider white
+                splitPane.setDividerSize(2); //Set the divider to be 2 pixels thin
+                splitPane.setBackground(Color.WHITE); //Making the split pane divider white
 
                 this.add(splitPane, BorderLayout.CENTER);
             }
+
+        public ButtonGridPanel getButtonGridPanel() {
+            return buttonGridPanel;
+        }
+
+        public BottomSubPanel getBottomSubPanel() {
+            return bottomSubPanel;
+        }
     }
