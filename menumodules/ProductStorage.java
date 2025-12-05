@@ -107,7 +107,7 @@ public class ProductStorage
                     "TeamGroup"));
             
             //RAMs
-            RAMs.add(new RAM("G.Skill Trident Z5 Neo RGB DDR5-6000 (4 x 64GB", 
+            RAMs.add(new RAM("G.Skill Trident Z5 Neo RGB DDR5-6000 (4 x 64GB)", 
                 171956.95, 4, 
                     "G.Skill"));
             RAMs.add(new RAM("Corsair Vengeance DDR5-5200 (2 x 32GB)", 

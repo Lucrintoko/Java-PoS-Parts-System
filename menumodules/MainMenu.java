@@ -44,14 +44,17 @@ public class MainMenu extends JFrame
                 //Adding Main Panel to the JFrame
                 this.add(mainPanel, BorderLayout.CENTER);
 
-                //Connecting the Button Grid Panel to the Let Main Panel's Sub Panels and the ProductStorage.java
+                //Connecting the Button Grid Panel to the Let Main Panel's Sub Panels, ProductStorage.java, and RightPanel.java
                 ProductStorage productStorage = new ProductStorage();
                 
                 menumodules.leftpanel.subpanels.TopSubPanel topSubPanel = leftPanel.getTopSubPanel();
                 menumodules.middlepanel.subpanels.BottomSubPanel bottomSubPanel = middlePanel.getBottomSubPanel();
                 menumodules.middlepanel.subpanels.ButtonGridPanel buttonGridPanel = middlePanel.getButtonGridPanel();
+                menumodules.rightpanel.subpanels.TopSubPanel cartPanel = rightPanel.getTopSubPanel();
 
                 buttonGridPanel.setDependencies(topSubPanel, bottomSubPanel, productStorage);
+                bottomSubPanel.setCartPanel(cartPanel);
+                bottomSubPanel.setLeftTopPanel(topSubPanel);
 
                 //Make Frame Visible
                 this.setVisible(true);
