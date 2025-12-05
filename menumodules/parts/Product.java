@@ -20,6 +20,7 @@ public abstract class Product
         public String getPartName (){return partName;}
         public double getPrice (){return price;}
         public int getAmount (){return amount;}
+        public float getTax() { return tax; }
         //Setters
         public void setAmount(int amount) { this.amount = amount; }
 
