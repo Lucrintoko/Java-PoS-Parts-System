@@ -113,7 +113,7 @@ public class BottomSubPanel extends JPanel
                         minus.setPreferredSize(new Dimension(25, 25));
                         minus.setMargin(new Insets(0, 0, 0, 0));
                         minus.setBorderPainted(false);
-                        minus.setOpaque(false);
+                        minus.setBackground(Color.decode("#E63946"));
                         minus.setContentAreaFilled(false);
                         minus.setForeground(Color.WHITE);
                         
@@ -127,7 +127,7 @@ public class BottomSubPanel extends JPanel
                         plus.setPreferredSize(new Dimension(25, 25));
                         plus.setMargin(new Insets(0, 0, 0, 0));
                         plus.setBorderPainted(false);
-                        plus.setOpaque(false);
+                        plus.setBackground(Color.decode("#06D6A0"));
                         plus.setContentAreaFilled(false);
                         plus.setForeground(Color.WHITE);
                         
