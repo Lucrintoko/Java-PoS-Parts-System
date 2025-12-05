@@ -16,7 +16,7 @@ public class MainMenu extends JFrame
         public MainMenu()
             {
                 //Basic JFrame Properties
-                this.setSize(1200, 800);
+                this.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 //Center the window
                 this.setLocationRelativeTo(null);
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,6 +55,12 @@ public class MainMenu extends JFrame
                 buttonGridPanel.setDependencies(topSubPanel, bottomSubPanel, productStorage);
                 bottomSubPanel.setCartPanel(cartPanel);
                 bottomSubPanel.setLeftTopPanel(topSubPanel);
+                
+                cartPanel.setLeftTopPanel(topSubPanel);
+                cartPanel.setProductStorage(productStorage);
+
+                // Link Right Panel Bottom to Top
+                rightPanel.getBottomSubPanel().setCartPanel(cartPanel);
 
                 //Make Frame Visible
                 this.setVisible(true);
