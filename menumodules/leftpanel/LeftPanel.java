@@ -15,28 +15,19 @@ public class LeftPanel extends JPanel
                 //Left Panel Configurations
                 this.setLayout(new BorderLayout());
                 this.setBackground(Color.BLACK);
-                //-1 Indicates that to just resize based on window size
-                this.setPreferredSize(new Dimension(350, -1));
+                //0 Indicates that we don't care about height (BorderLayout handles it), but avoids invalid -1
+                this.setPreferredSize(new Dimension(350, 0));
 
                 //Insantiating Sub Panels to be added to Main Left Panel
                 topSubPanel = new TopSubPanel();
-                BottomSubPanel bottomSubPanel = new BottomSubPanel();
-
-                //Creating Split Pane Divider 
-                JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, topSubPanel, bottomSubPanel);
-                //Split Pane Configurations
-                splitPane.setEnabled(false);
-                splitPane.setDividerSize(2);
-                //Make Divider White
-                splitPane.setBackground(Color.WHITE);
-                splitPane.setResizeWeight(0.7);
 
                 //Adding to the JPanel
-                this.add(splitPane, BorderLayout.CENTER);
+                this.add(topSubPanel, BorderLayout.CENTER);
             }
         
         //Method for setting dependency
-        public TopSubPanel getTopSubPanel() {
-            return topSubPanel;
-        }
+        public TopSubPanel getTopSubPanel() 
+            {
+                return topSubPanel;
+            }
     }

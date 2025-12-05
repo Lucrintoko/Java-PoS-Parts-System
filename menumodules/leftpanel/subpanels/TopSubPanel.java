@@ -18,6 +18,8 @@ public class TopSubPanel extends JPanel
                 //JPanel Default Configurations
                 this.setLayout(new GridBagLayout());
                 this.setBackground(Color.BLACK);
+                this.setPreferredSize(new Dimension(350, 500));
+                this.setMinimumSize(new Dimension(350, 300));
 
                 //For setting parameters for the Grid Bag Layout
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -235,5 +237,8 @@ public class TopSubPanel extends JPanel
                 remainingPartsLabel[1].setText("(" + gpuCount + ")");
                 remainingPartsLabel[2].setText("(" + ssdCount + ")");
                 remainingPartsLabel[3].setText("(" + ramCount + ")");
+                
+                this.revalidate();
+                this.repaint();
             }
     }
