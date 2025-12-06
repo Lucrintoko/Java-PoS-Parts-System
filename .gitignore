@@ -20,3 +20,7 @@ hs_err_pid*
 # Build Specific 
 /target/
 /build/
+out/
+
+# Manifest
+*.MF
