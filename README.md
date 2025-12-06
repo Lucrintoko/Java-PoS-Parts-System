@@ -78,7 +78,7 @@ java PoSSystem.java
 
 For a quick-start experience without compiling:
 
-1.  **Download:** Navigate to the **[Releases](https://www.google.com/search?q=%23)** section on the right side of the repository and download the latest `.zip` file.
+1.  **Download:** Navigate to the **[Releases](https://github.com/Lucrintoko/Java-PoS-Parts-System/releases)** section on the right side of the repository and download the latest `.zip` file.
 
 2.  **Extract:** Unzip the file to your desired folder location.
 
