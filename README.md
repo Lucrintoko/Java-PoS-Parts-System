@@ -1,7 +1,5 @@
 # Java-PoS-Parts-System
 
-Here is a professional, modern, and structured README file for your GitHub repository.
-
 -----
 
 # 🖥️ Java Point of Sale (POS) System
