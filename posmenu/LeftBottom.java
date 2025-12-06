@@ -20,7 +20,7 @@ public class LeftBottom {
         userImage.setHorizontalAlignment(SwingConstants.CENTER);
 
         
-        namePanel = new JLabel("Berham J. Bari"); //Temporary name for now since idk what to put 
+        namePanel = new JLabel("Nash Francisco"); //Temporary name for now since idk what to put 
         namePanel.setFont(new Font("Segoe UI", Font.BOLD, 14));
         namePanel.setForeground(Color.WHITE);
         namePanel.setHorizontalAlignment(SwingConstants.CENTER);
