@@ -59,6 +59,35 @@ The application architecture is divided into modular panels:
 
 ## 📥 Installation
 
+You can run the application either by compiling the source code manually or by downloading the pre-built executable.
+
+### **Option 1: Run from Source Code**
+
+If you wish to view the code or run it via the terminal:
+
+1.  **Download:** Click the green **Code** button \> **Download ZIP**.
+2.  **Extract:** Unzip the file to your desired folder location.
+3.  **Compile & Run:** Open your terminal or command prompt, navigate to the project directory, and execute the following commands:
+
+<!-- end list -->
+
+```bash
+javac PoSSystem.java
+java PoSSystem.java
+```
+
+### **Option 2: Run via Executable (Releases)**
+
+For a quick-start experience without compiling:
+
+1.  **Download:** Navigate to the **[Releases](https://www.google.com/search?q=%23)** section on the right side of the repository and download the latest `.zip` file.
+
+2.  **Extract:** Unzip the file to your desired folder location.
+
+3.  **Run:** Open the extracted folder and launch the application by running:
+
+    `SparksPOS\SparksPOS.exe`
+
 -----
 
 ## 🕹️ Usage Guide
@@ -82,7 +111,10 @@ Follow these steps to operate the Point of Sale system:
 
 ### 👤 Author
 
-  * **[Your Name/Username]** - *Initial work*
+  * **Sean Matthew Araneta** - *Main Programmer*
+  * **Nash Khristianne Francisco** - *Layout Designer*
+  * **Marius Parchamento** - *Minor Front-End Programmer*
+  * **Bari Berham** - *Minor Front-End Programmer*
 
 -----
 
