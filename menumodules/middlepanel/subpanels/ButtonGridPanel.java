@@ -163,7 +163,8 @@ public class ButtonGridPanel extends JPanel implements ActionListener
                 button.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
                 //Getting the image via file path
-                ImageIcon icon = new ImageIcon(imagePath);
+                java.net.URL imgURL = getClass().getResource("/" + imagePath);
+                ImageIcon icon = (imgURL != null) ? new ImageIcon(imgURL) : new ImageIcon();
 
                 if (icon.getImage() != null)
                     {

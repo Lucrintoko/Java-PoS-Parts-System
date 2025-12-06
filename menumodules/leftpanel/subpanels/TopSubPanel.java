@@ -64,8 +64,8 @@ public class TopSubPanel extends JPanel
                 Font customFont;
                 try 
                     {
-                        File fontFile = new File("menumodules/fonts/Montserrat-Bold.ttf");
-                        customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(40f);
+                        java.io.InputStream is = getClass().getResourceAsStream("/menumodules/fonts/Montserrat-Bold.ttf");
+                        customFont = Font.createFont(Font.TRUETYPE_FONT, is).deriveFont(40f);
                     } 
                 catch (Exception e) 
                     {
@@ -98,8 +98,8 @@ public class TopSubPanel extends JPanel
                 //Font Configuration for Part Labels
                 try 
                     {
-                        File fontFile = new File("menumodules/fonts/Montserrat-Bold.ttf");
-                        customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(28f);
+                        java.io.InputStream is = getClass().getResourceAsStream("/menumodules/fonts/Montserrat-Bold.ttf");
+                        customFont = Font.createFont(Font.TRUETYPE_FONT, is).deriveFont(28f);
                     } 
                 catch (Exception e) 
                     {

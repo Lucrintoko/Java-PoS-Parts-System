@@ -20,8 +20,8 @@ public class BottomSubPanel extends JPanel
                 Font customFont;
                 try 
                     {
-                        File fontFile = new File("menumodules/fonts/Montserrat-Bold.ttf");
-                        customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(22f);
+                        java.io.InputStream is = getClass().getResourceAsStream("/menumodules/fonts/Montserrat-Bold.ttf");
+                        customFont = Font.createFont(Font.TRUETYPE_FONT, is).deriveFont(22f);
                     } 
                 catch (Exception e) 
                     {
